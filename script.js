@@ -1,3 +1,8 @@
+var cry = document.getElementById("cry");
+
+  
+
+  
 document.getElementById('pokemonForm').addEventListener('submit', function (event) {
   event.preventDefault();
 
@@ -46,8 +51,18 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
         .then(function (pokemonData) {
           var pokemonInfo = document.getElementById('pokemonInfo');
 
+         
           
           pokemonInfo.innerHTML = `
+
+         
+          <audio src=" https://play.pokemonshowdown.com/audio/cries/${pokemonData.name}.mp3" controls autoplay  id="cry" class="cry">
+          
+          </audio>
+        
+        
+      
+          
             
           <div class="container  mb-5  border rounded-3  shadow-lg border-danger" style="background-color: #222224;" >
           <div class="row   m-3 "  style="background-color: #D73A33;">
@@ -196,7 +211,10 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
           </div>
         </div>
         
-          `;
+          `
+          var cry = document.getElementById("cry");
+          cry.volume = 0.04; 
+          ;
         })
         .catch(function (error) {
           console.error('Erro ao obter detalhes do Pokémon:', error);
@@ -210,3 +228,4 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
       pokemonInfo.innerHTML = 'Pokémon não encontrado.';
     });
 });
+
