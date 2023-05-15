@@ -10,3 +10,22 @@
 .x{
     border-radius: 100px;
 }
+
+.logo{
+ 
+    
+        color: #FFCC00;
+        -webkit-text-stroke-width: 5px;
+        -webkit-text-stroke-color: #0075BE;
+    
+}
+
+.logo2{
+    color: #FFCC00;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #0075BE;
+}
+
+hr{
+    color: #FFCC00;
+}

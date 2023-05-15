@@ -60,53 +60,53 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
             <div class="col">
     
               <div class="row">
-                <div class="col border-bottom  shadow-lg border-danger mt-1" >
+                <div class="col border-bottom  logo2 shadow-lg border-danger mt-1" >
                   <h1>${pokemonData.name.toUpperCase()}</h1>
                 </div>
               </div>
               
               <div class="row">
-                <div class="col">
+                <div class="col logo2">
                   <h1>Types</h1>
                 </div>
               </div>
               
               <div class="row justify-content-center">
-                <div class="col">
+                <div class="col   " style="color: #DFDFDF;">
                 <h3>${pokemonData.types[0].type.name}</h3>
           
                 </div>
-                <div class="col ">
+                <div class="col " style="color: #DFDFDF;">
                 <h3>${pokemonData.types[1]?.type?.name == undefined ? '' : pokemonData.types[1].type.name}</h3>
             
                 </div>
               </div>
             
               <div class="row">
-                <div class="col">
+                <div class="col logo2">
                 <h1>Abilitys</h1>
               
                 </div>
               </div>
               <div class="row">
-                <div class="col">
+                <div class="col " style="color: #DFDFDF;">
                 <h3>  ${pokemonData.abilities[0].ability.name}</h3>
               
                 </div>
-                <div class="col">
+                <div class="col " style="color: #DFDFDF;">
                 <h3>  ${pokemonData.abilities[1]?.ability?.name == undefined ? '' : pokemonData.abilities[1].ability.name}</h3>
                 </div>
               </div>
               <div class="row">
-                <div class="col">
+                <div class="col logo2">
                 <h1>Eggs groups</h1> 
                 </div>
               </div>
               <div class="row">
-                <div class="col">
+                <div class="col " style="color: #DFDFDF;">
                  <h3> ${egg1}</h3>
                 </div>
-                <div class="col">
+                <div class="col " style="color: #DFDFDF;">
                 <h3> ${egg2}</h3>
                 </div>
               </div>
@@ -117,7 +117,7 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
             </div>
           </div>
 
-          <div>${desc}</div>
+          <div style="color: #DFDFDF;">${desc}</div>
           
           <div class="row m-3 " style="background-color: #D73A33;">
             <div class="col d-flex justify-content-center align-items-center bg border border-0 rounded-circle m-2">
@@ -126,7 +126,7 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
             <div class="col ">
 
             <div class="row ">
-            <div class="col">
+            <div class="col logo2" >
               <h3>Base stats</h3>
             </div>
       
@@ -134,9 +134,9 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
             <hr>
           
 
-          </div>
-              <div class="row" >
-                <div class="col">
+          </div > 
+              <div class="row" style="color: #DFDFDF;"  >
+                <div class="col" >
                 <h5>${pokemonData.stats[0].stat.name}</h5>
                 </div>
           
@@ -145,7 +145,7 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
                 </div>
                 <hr>
               </div>
-              <div class="row">
+              <div class="row " style="color: #DFDFDF;">
                 <div class="col">
                 <h5>${pokemonData.stats[1].stat.name}</h5>
                 </div>
@@ -154,7 +154,7 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
                 </div>
                 <hr>
               </div>
-              <div class="row">
+              <div class="row" style="color: #DFDFDF;">
                 <div class="col">
                 <h5>${pokemonData.stats[2].stat.name}</h5>
                 </div>
@@ -163,7 +163,7 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
                 </div>
               </div>
               <hr>
-              <div class="row">
+              <div class="row" style="color: #DFDFDF;">
                 <div class="col">
                 <h5>${pokemonData.stats[3].stat.name}</h5>
                 </div>
@@ -172,7 +172,7 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
                 </div>
               </div>
               <hr>
-              <div class="row">
+              <div class="row" style="color: #DFDFDF;">
                 <div class="col">
                 <h5>${pokemonData.stats[4].stat.name}</h5>
                 </div>
@@ -181,7 +181,7 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
                 </div>
               </div>
               <hr>
-              <div class="row">
+              <div class="row" style="color: #DFDFDF;">
                 <div class="col">
                 <h5>${pokemonData.stats[5].stat.name}</h5>
                 </div>
