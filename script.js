@@ -46,12 +46,12 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
         .then(function (pokemonData) {
           var pokemonInfo = document.getElementById('pokemonInfo');
 
-         
+          
           pokemonInfo.innerHTML = `
             
-          <div class="container border mb-5 ">
-          <div class="row border " >
-            <div class="col d-flex justify-content-center align-items-center bg border rounded-circle" width="65%" >
+          <div class="container  mb-5  border rounded-3  shadow-lg border-danger" style="background-color: #222224;" >
+          <div class="row   m-3 "  style="background-color: #D73A33;">
+            <div class="col m-2 d-flex justify-content-center align-items-center bg border border-0 rounded-circle" width="65%" >
 
             <img src=" ${pokemonData.sprites.versions['generation-v']['black-white']['animated'].front_default}" alt="Imagem" onerror="this.onerror=null; this.src='${pokemonData.sprites.front_default}';" width="65%">
       
@@ -60,7 +60,7 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
             <div class="col">
     
               <div class="row">
-                <div class="col border border-white mt-1" style="background-color: #2468B1;">
+                <div class="col border-bottom  shadow-lg border-danger mt-1" >
                   <h1>${pokemonData.name.toUpperCase()}</h1>
                 </div>
               </div>
@@ -112,26 +112,30 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
               </div>
             </div>
     
-            <div class="col d-flex justify-content-center align-items-center bg  border rounded-circle">
+            <div class="col  d-flex justify-content-center align-items-center bg   border border-0 rounded-circle m-2 ">
             <img src=" ${pokemonData.sprites.versions['generation-v']['black-white']['animated'].back_default}" alt="Imagem" onerror="this.onerror=null; this.src='${pokemonData.sprites.back_default}';" width="65%">
             </div>
           </div>
+
+          <div>${desc}</div>
           
-          <div class="row ">
-            <div class="col d-flex justify-content-center align-items-center bg border rounded-circle">
+          <div class="row m-3 " style="background-color: #D73A33;">
+            <div class="col d-flex justify-content-center align-items-center bg border border-0 rounded-circle m-2">
             <img src=" ${pokemonData.sprites.versions['generation-v']['black-white']['animated'].front_shiny}" alt="Imagem" onerror="this.onerror=null; this.src='${pokemonData.sprites.front_shiny}';" width="65%">
             </div>
             <div class="col ">
 
-            <div class="row">
+            <div class="row ">
             <div class="col">
               <h3>Base stats</h3>
             </div>
       
       
             <hr>
+          
+
           </div>
-              <div class="row">
+              <div class="row" >
                 <div class="col">
                 <h5>${pokemonData.stats[0].stat.name}</h5>
                 </div>
@@ -186,7 +190,7 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
                 </div>
               </div>
             </div>
-            <div class="col d-flex justify-content-center align-items-center bg border rounded-circle" >
+            <div class="col m-2 d-flex justify-content-center align-items-center bg border-0 border rounded-circle" >
             <img src=" ${pokemonData.sprites.versions['generation-v']['black-white']['animated'].back_shiny}" alt="Imagem" onerror="this.onerror=null; this.src='${pokemonData.sprites.back_shiny}';" width="65%" >
             </div>
           </div>
