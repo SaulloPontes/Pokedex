@@ -132,7 +132,7 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
             </div>
           </div>
 
-          <div style="color: #DFDFDF;">${desc}</div>
+          <p style="color: #DFDFDF;" id="text">${desc}</p>
           
           <div class="row m-3 " style="background-color: #D73A33;">
             <div class="col d-flex justify-content-center align-items-center bg border border-0 rounded-circle m-2">
@@ -214,6 +214,11 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
           `
           var cry = document.getElementById("cry");
           cry.volume = 0.04; 
+          var tag = document.getElementById('text');
+          var text = tag.innerHTML;
+          var newTag = text.replace(/\u000C/g, ' ')
+          tag.innerHTML = newTag
+
           ;
         })
         .catch(function (error) {
