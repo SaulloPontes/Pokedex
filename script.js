@@ -37,9 +37,19 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
         desc = speciesData.flavor_text_entries[cont].flavor_text
       }
 
-  
-   
+
+      /* SPRITEs ANIMADOs DA API : 
       
+      ${pokemonData.sprites.versions['generation-v']['black-white']['animated'].front_default}
+      ${pokemonData.sprites.front_default}
+      ${pokemonData.sprites.versions['generation-v']['black-white']['animated'].back_default}
+      ${pokemonData.sprites.back_default}
+      ${pokemonData.sprites.versions['generation-v']['black-white']['animated'].back_shiny}
+      ${pokemonData.sprites.back_shiny}
+      ${pokemonData.sprites.versions['generation-v']['black-white']['animated'].front_shiny}
+      ${pokemonData.sprites.front_shiny}
+      
+      */
      
       fetch('https://pokeapi.co/api/v2/pokemon/' + pokemonId)
         .then(function (response) {
@@ -68,7 +78,7 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
           <div class="row   m-3 "  style="background-color: #D73A33;">
             <div class="col m-2 d-flex justify-content-center align-items-center bg border border-0 rounded-circle" width="65%" >
 
-            <img src=" ${pokemonData.sprites.versions['generation-v']['black-white']['animated'].front_default}" alt="Imagem" onerror="this.onerror=null; this.src='${pokemonData.sprites.front_default}';" width="65%">
+            <img src=" https://play.pokemonshowdown.com/sprites/ani/${pokemonData.name}.gif" alt="Imagem" onerror="this.onerror=null; this.src='${pokemonData.sprites.front_default}';" width="65%">
       
             </div>
     
@@ -128,7 +138,7 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
             </div>
     
             <div class="col  d-flex justify-content-center align-items-center bg   border border-0 rounded-circle m-2 ">
-            <img src=" ${pokemonData.sprites.versions['generation-v']['black-white']['animated'].back_default}" alt="Imagem" onerror="this.onerror=null; this.src='${pokemonData.sprites.back_default}';" width="65%">
+            <img src=" https://play.pokemonshowdown.com/sprites/ani-back/${pokemonData.name}.gif" alt="Imagem" onerror="this.onerror=null; this.src='${pokemonData.sprites.back_default}';" width="65%">
             </div>
           </div>
 
@@ -136,7 +146,7 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
           
           <div class="row m-3 " style="background-color: #D73A33;">
             <div class="col d-flex justify-content-center align-items-center bg border border-0 rounded-circle m-2">
-            <img src=" ${pokemonData.sprites.versions['generation-v']['black-white']['animated'].front_shiny}" alt="Imagem" onerror="this.onerror=null; this.src='${pokemonData.sprites.front_shiny}';" width="65%">
+            <img src= "https://play.pokemonshowdown.com/sprites/ani-shiny/${pokemonData.name}.gif" alt="Imagem" onerror="this.onerror=null; this.src='${pokemonData.sprites.front_shiny}';" width="65%">
             </div>
             <div class="col ">
 
@@ -206,7 +216,7 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
               </div>
             </div>
             <div class="col m-2 d-flex justify-content-center align-items-center bg border-0 border rounded-circle" >
-            <img src=" ${pokemonData.sprites.versions['generation-v']['black-white']['animated'].back_shiny}" alt="Imagem" onerror="this.onerror=null; this.src='${pokemonData.sprites.back_shiny}';" width="65%" >
+            <img src="https://play.pokemonshowdown.com/sprites/ani-back-shiny/${pokemonData.name}.gif" alt="Imagem" onerror="this.onerror=null; this.src='${pokemonData.sprites.back_shiny}';" width="65%" >
             </div>
           </div>
         </div>
