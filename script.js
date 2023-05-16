@@ -109,7 +109,7 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
             
               <div class="row">
                 <div class="col logo2">
-                <h1>Abilitys</h1>
+                <h1>Abilities</h1>
               
                 </div>
               </div>
