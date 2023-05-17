@@ -8,7 +8,7 @@ var ab1EffectValue ='' ;
 var ab1Effect  ='';
 var swordshield1Value ='';
 var descSwordshield1 ='';
-
+var ab1='';
 
 
   
@@ -71,6 +71,7 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
         })
         .then(async function (pokemonData) {
           var pokemonInfo = document.getElementById('pokemonInfo');
+          var x = pokemonData.types[1]?.type?.name == undefined ? '' : pokemonData.types[1].type.name
 
           //  Abillities
          await fetch('https://pokeapi.co/api/v2/ability/'+pokemonData.abilities[0].ability.name)
@@ -99,8 +100,9 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
               pokemonInfo.innerHTML = 'Erro ao obter detalhes do Pokémon.';
             });
 
-
-           await fetch('https://pokeapi.co/api/v2/ability/'+pokemonData.abilities[1].ability.name)
+            ab1 = pokemonData.abilities[1]?.ability?.name == undefined ? '' : pokemonData.abilities[1].ability.name
+            console.log(ab1)
+           await fetch('https://pokeapi.co/api/v2/ability/'+ab1)
             .then(function(response){
               if(!response.ok){
                 throw Error(response.statusText);
