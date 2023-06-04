@@ -17,13 +17,75 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
 
   var pokemonNameOrId = document.getElementById('pokemonInput').value;
 
-  fetch('https://pokeapi.co/api/v2/pokemon-species/' + pokemonNameOrId.toLowerCase())
-    .then(function (response) {
-      if (!response.ok) {
-        throw Error(response.statusText);
-      }
+  
+    fetch('https://pokeapi.co/api/v2/type/' + pokemonNameOrId.toLowerCase())
+    .then(function(response) {
+    
       return response.json();
+
     })
+    .then(function(typePoke) {
+      var info = typePoke.damage_relations;
+
+      var doubleDamageFrom = info.double_damage_from;
+      var doubleDamageTo = info.double_damage_to;
+      var halfDamageFrom = info.half_damage_from;
+      var halfDamageTo = info.half_damage_to;
+      var noDamageFrom = info.no_damage_from;
+      var noDamageTo = info.no_damage_to;
+
+      var pokemonInfo = document.getElementById('pokemonInfo');
+
+      pokemonInfo.innerHTML =`
+      <div class="container border-0 rounded  caixa "  >
+      <div class="row">
+        <div class="col" >
+          <h3 class="logo2">Double damage from</h3>
+          <div id="damageFromContainer" class="Danger" ></div>
+          <h3 class="logo2">Double Damage To</h3>
+          <div id="damageFromContainer2" class="teste" >
+    
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+      `
+      var damageFromContainer = document.getElementById('damageFromContainer')
+
+      doubleDamageFrom.forEach(function(damage) {
+    
+        var p = document.createElement('p');
+        p.textContent = damage.name;
+        damageFromContainer.appendChild(p);
+      });
+
+      var damageFromContainer = document.getElementById('damageFromContainer2')
+
+      doubleDamageTo.forEach(function(damage) {
+    
+        var p = document.createElement('p' );
+        p.textContent = damage.name;
+        damageFromContainer.appendChild(p);
+      });
+
+
+      
+
+      
+      
+      
+    })
+
+
+  fetch('https://pokeapi.co/api/v2/pokemon-species/' + pokemonNameOrId.toLowerCase())
+  .then(function(response) {
+  
+    return response.json();
+
+  })
     .then(function (speciesData) {
      
       var pokemonId = speciesData.id;
@@ -63,24 +125,22 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
     
      
       fetch('https://pokeapi.co/api/v2/pokemon/' + pokemonId)
-        .then(function (response) {
-          if (!response.ok) {
-            throw Error(response.statusText);
-          }
-          return response.json();
-        })
+      .then(function(response) {
+  
+        return response.json();
+    
+      })
         .then(async function (pokemonData) {
           var pokemonInfo = document.getElementById('pokemonInfo');
           var x = pokemonData.types[1]?.type?.name == undefined ? '' : pokemonData.types[1].type.name
 
           //  Abillities
          await fetch('https://pokeapi.co/api/v2/ability/'+pokemonData.abilities[0].ability.name)
-            .then(function(response){
-              if(!response.ok){
-                throw Error(response.statusText);
-              }
-              return response.json();
-            })
+         .then(function(response) {
+  
+          return response.json();
+      
+        })
             .then(function(pokemonAB0){
            
               ab0EffectValue = pokemonAB0.effect_entries.filter (element => element.language.name ==="en")
@@ -103,12 +163,11 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
             ab1 = pokemonData.abilities[1]?.ability?.name == undefined ? '' : pokemonData.abilities[1].ability.name
             console.log(ab1)
            await fetch('https://pokeapi.co/api/v2/ability/'+ab1)
-            .then(function(response){
-              if(!response.ok){
-                throw Error(response.statusText);
-              }
-              return response.json();
-            })
+           .then(function(response) {
+  
+            return response.json();
+        
+          })
             .then(function(pokemonAB1){
 
               ab1Effect = pokemonAB1.effect_entries.filter (element => element.language.name ==="en")
@@ -414,10 +473,6 @@ document.getElementById('pokemonForm').addEventListener('submit', function (even
           pokemonInfo.innerHTML = 'Erro ao obter detalhes do Pokémon.';
         });
     })
-    .catch(function (error) {
-      console.error('Erro ao obter informações da espécie do Pokémon:', error);
-      var pokemonInfo = document.getElementById('pokemonInfo');
-      pokemonInfo.innerHTML = 'Pokémon não encontrado.';
-    });
+   
 });
 
