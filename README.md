@@ -2,7 +2,7 @@ Link da pokedex: https://saullopontes.github.io/Pokedex/
 
 Consultas
 - nome / exemplo : charizard
-- id na pokedex / exemplo : 3 obs: "existem 898"
+- id na pokedex / exemplo : 3. Obs: "existem 898"
 - tipo do pokemon / exemplo : fire
 
 
